@@ -1,7 +1,7 @@
 import { ApolloServer, gql, UserInputError } from 'apollo-server'
 import {v1 as uuid} from 'uuid'
 
-const alumnos = [ //Notiene phone
+const alumnos = [ //No tiene phone
   {
     name: "Julio",
     lastname: "Ramirez",
@@ -49,6 +49,7 @@ const alumnos = [ //Notiene phone
 ];
 
 //CRUD -> Query para get y Mutation para post, put, delete
+//Definicion de schema
 const definicion = gql`
 
     type Address{
@@ -96,7 +97,7 @@ const definicion = gql`
     }
 
 `
-
+//Resolvers - Implementando la logica
 const resolvers={
     Query: {
         alumnoCount: () => alumnos.length,
